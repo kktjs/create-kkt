@@ -1,0 +1,6 @@
+**/*.svg
+package.json
+lib
+
+.gitignore
+.prettierignore

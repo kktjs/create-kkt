@@ -1,0 +1,58 @@
+{
+  "name": "create-kkt",
+  "version": "1.0.4",
+  "description": "Creates a KKT application using the command line.",
+  "homepage": "https://github.com/kktjs/create-kkt",
+  "author": "Kenny Wong <wowohoo@qq.com> (https://github.com/jaywcjlove)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kktjs/create-kkt"
+  },
+  "bin": {
+    "create-kkt": "lib/cli.js"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "start": "node lib/index.js",
+    "watch": "npm run watch:ts",
+    "watch:ts": "tsbb watch & npm run build:types -- --watch",
+    "build": "npm run build:ts && npm run build:types",
+    "build:ts": "tsbb build",
+    "build:types": "tsbb types",
+    "test": "tsbb test",
+    "prettier": "prettier -c --write '**/*'",
+    "coverage": "tsbb test --coverage"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "jest": {},
+  "keywords": [
+    "kkt",
+    "react",
+    "redux",
+    "rematch",
+    "uiw",
+    "redux-saga",
+    "elm",
+    "framework",
+    "frontend"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/fs-extra": "^8.0.1",
+    "@types/node": "^12.12.6",
+    "@types/yargs": "^13.0.3",
+    "prettier": "^1.18.2",
+    "tsbb": "1.2.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.7.2",
+    "axios": "^0.19.0",
+    "colors-cli": "^1.0.26",
+    "execa": "^3.4.0",
+    "fs-extra": "^8.1.0",
+    "yargs": "^14.2.0"
+  }
+}
