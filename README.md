@@ -17,16 +17,14 @@ $ npx create kkt my-app
 Below is a help of commands you might find useful.
 
 ```bash
-Usage: cli.js <app-name> [options]
+Usage: create-kkt <app-name> [options]
 
 Options:
   --version      Show version number                                   [boolean]
   --example, -e  Example from
                  https://github.com/kktjs/kkt-next/tree/master/example
                  example-path                        [string] [default: "basic"]
-  --path, -p     Example from
-                 https://github.com/kktjs/kkt-next/tree/master/example
-                 example-path
+  --path, -p     Specify the download target git address.
                          [string] [default: "https://github.com/kktjs/kkt-next"]
   --force, -f    Overwrite target directory if it exists.
                                                       [boolean] [default: false]
