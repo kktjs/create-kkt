@@ -8,8 +8,8 @@ import { moverDir } from '../utils/moverDir';
 export default async (argv: typeof command) => {
   const appName = argv._[0] ? argv._[0] : argv.appName;
   const projectPath = path.join(process.cwd(), appName);
-  const cacheDirPath = path.join(projectPath, '.cache-tsbb');
-  const exampleDirPath = path.join(projectPath, '.cache-tsbb', 'example', argv.example);
+  const cacheDirPath = path.join(projectPath, '.cache-kkt');
+  const exampleDirPath = path.join(projectPath, '.cache-kkt', 'example', argv.example);
   try {
     if (argv.force) {
       await fs.remove(projectPath);
