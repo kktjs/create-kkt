@@ -24,7 +24,7 @@ export default async (argv: typeof command) => {
       process.exit(1);
     }
     await fs.ensureDir(projectPath);
-    const gitArgs = [ 'clone', 'https://github.com/kktjs/kkt-next.git', '--depth', '1', cacheDirPath];
+    const gitArgs = [ 'clone', 'https://github.com/kktjs/kkt.git', '--depth', '1', cacheDirPath];
     console.log(`\nDownloading files for ${color.green(argv.example)} example`);
     await run('git', gitArgs, projectPath);
     if (!fs.existsSync(exampleDirPath)) {

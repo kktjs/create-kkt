@@ -8,7 +8,7 @@ export const command = yargs
   .default('appName', 'my-app')
   .option('example', {
     alias: 'e',
-    describe: 'Example from https://github.com/kktjs/kkt-next/tree/master/example example-path',
+    describe: 'Example from https://github.com/kktjs/kkt/tree/master/example example-path',
     type: 'string',
     default: 'basic',
   })
@@ -16,7 +16,7 @@ export const command = yargs
     alias: 'p',
     describe: 'Specify the download target git address.',
     type: 'string',
-    default: 'https://github.com/kktjs/kkt-next',
+    default: 'https://github.com/kktjs/kkt',
   })
   .option('force', {
     alias: 'f',

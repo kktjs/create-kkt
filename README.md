@@ -6,7 +6,7 @@
 [![](https://img.shields.io/github/release/kktjs/create-kkt)](https://github.com/kktjs/create-kkt/releases)
 [![](https://img.shields.io/npm/v/create-kkt.svg)](https://www.npmjs.com/package/create-kkt)
 
-Creates a [kkt-next](https://github.com/kktjs/kkt-next) application using the command line.
+Creates a [kkt](https://github.com/kktjs/kkt) application using the command line.
 
 ### Usage
 
@@ -28,10 +28,10 @@ Usage: create-kkt <app-name> [options]
 Options:
   --version      Show version number                                   [boolean]
   --example, -e  Example from
-                 https://github.com/kktjs/kkt-next/tree/master/example
+                 https://github.com/kktjs/kkt/tree/master/example
                  example-path                        [string] [default: "basic"]
   --path, -p     Specify the download target git address.
-                         [string] [default: "https://github.com/kktjs/kkt-next"]
+                         [string] [default: "https://github.com/kktjs/kkt"]
   --force, -f    Overwrite target directory if it exists.
                                                       [boolean] [default: false]
   --help         Show help                                             [boolean]
