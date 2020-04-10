@@ -45,7 +45,7 @@
     "@types/node": "^12.12.6",
     "@types/yargs": "^13.0.3",
     "prettier": "^1.18.2",
-    "tsbb": "1.2.0"
+    "tsbb": "1.6.2"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.2",
