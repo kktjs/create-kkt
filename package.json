@@ -43,7 +43,7 @@
   "devDependencies": {
     "@types/fs-extra": "8.1.0",
     "@types/node": "12.12.35",
-    "@types/yargs": "13.0.8",
+    "@types/yargs": "15.0.12",
     "prettier": "1.19.1",
     "tsbb": "1.6.2"
   },
