@@ -1,10 +1,6 @@
 ## create-kkt
 
-[![](https://img.shields.io/github/issues/kktjs/create-kkt.svg)](https://github.com/kktjs/create-kkt/issues)
-[![](https://img.shields.io/github/forks/kktjs/create-kkt.svg)](https://github.com/kktjs/create-kkt/network)
-[![](https://img.shields.io/github/stars/kktjs/create-kkt.svg)](https://github.com/kktjs/create-kkt/stargazers)
-[![](https://img.shields.io/github/release/kktjs/create-kkt)](https://github.com/kktjs/create-kkt/releases)
-[![](https://img.shields.io/npm/v/create-kkt.svg)](https://www.npmjs.com/package/create-kkt)
+[![](https://img.shields.io/github/issues/kktjs/create-kkt.svg)](https://github.com/kktjs/create-kkt/issues) [![](https://img.shields.io/github/forks/kktjs/create-kkt.svg)](https://github.com/kktjs/create-kkt/network) [![](https://img.shields.io/github/stars/kktjs/create-kkt.svg)](https://github.com/kktjs/create-kkt/stargazers) [![](https://img.shields.io/github/release/kktjs/create-kkt)](https://github.com/kktjs/create-kkt/releases) [![](https://img.shields.io/npm/v/create-kkt.svg)](https://www.npmjs.com/package/create-kkt)
 
 Creates a [kkt](https://github.com/kktjs/kkt) application using the command line.
 
@@ -15,7 +11,7 @@ $ yarn create kkt [appName]
 # or npm
 $ npm create kkt my-app
 # or npx
-$ npx create kkt my-app
+$ npx create-kkt my-app
 ```
 
 ### Command Help
@@ -23,21 +19,23 @@ $ npx create kkt my-app
 Below is a help of commands you might find useful.
 
 ```bash
-Usage: create-kkt <app-name> [options]
+Usage: create-kkt <app-name> [options] [--help|h]
 
 Options:
-  --version      Show version number                                   [boolean]
-  --example, -e  Example from
-                 https://github.com/kktjs/kkt/tree/master/example
-                 example-path                        [string] [default: "basic"]
-  --path, -p     Specify the download target git address.
-                         [string] [default: "https://github.com/kktjs/kkt"]
-  --force, -f    Overwrite target directory if it exists.
-                                                      [boolean] [default: false]
-  --help         Show help                                             [boolean]
-  --appName                                                  [default: "my-app"]
+  --version, -v Show version number
+  --help, -h Displays help information.
+  --example, -e Example from: https://kktjs.github.io/zip/ , default: "basic"
+  --force, -f Overwrite target directory if it exists. default: false
+  --path, -p Specify the download target git address. default: "https://kktjs.github.io/zip/"
 
-Copyright 2019
+Example:
+  npx create-kkt my-app
+  yarn create kkt appName
+  npm create kkt my-app
+  npm create kkt my-app -f
+  npm create kkt my-app -p https://kktjs.github.io/zip/
+
+Copyright 2021
 ```
 
 ## Development
@@ -46,3 +44,7 @@ Copyright 2019
 npm run watch # Listen compile .ts files.
 npm run build # compile .ts files.
 ```
+
+## License
+
+[MIT © Kenny Wong](https://github.com/kktjs/kkt/blob/master/LICENSE)

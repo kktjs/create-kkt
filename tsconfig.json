@@ -10,14 +10,7 @@
     "sourceMap": true,
     "outDir": "lib",
     "baseUrl": ".",
-    "paths": {
-      "*": [
-        "node_modules/*",
-        "src/type/*"
-      ]
-    }
+    "typeRoots": ["node_modules/@types/*", "src/type/*"]
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src/**/*"]
 }

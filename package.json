@@ -4,10 +4,12 @@
   "description": "Creates a KKT application using the command line.",
   "homepage": "https://github.com/kktjs/create-kkt",
   "author": "Kenny Wong <wowohoo@qq.com> (https://github.com/jaywcjlove)",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/kktjs/create-kkt"
   },
+  "typings": "lib/create.d.ts",
   "bin": {
     "create-kkt": "lib/cli.js"
   },
@@ -20,7 +22,7 @@
     "build:ts": "tsbb build",
     "build:types": "tsbb types",
     "test": "tsbb test",
-    "prettier": "prettier -c --write '**/*'",
+    "prettier": "prettier --write \"**/*.{js,ts,less,md,json}\"",
     "coverage": "tsbb test --coverage"
   },
   "files": [
@@ -39,20 +41,32 @@
     "framework",
     "frontend"
   ],
-  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,less,md,json}": [
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
+    "@types/download": "6.2.4",
     "@types/fs-extra": "9.0.6",
-    "@types/node": "12.12.35",
+    "@types/minimist": "1.2.1",
+    "@types/node": "14.14.20",
     "@types/yargs": "13.0.8",
-    "prettier": "1.19.1",
-    "tsbb": "1.6.2"
+    "husky": "4.3.7",
+    "lint-staged": "10.5.3",
+    "prettier": "2.2.1",
+    "tsbb": "1.7.9"
   },
   "dependencies": {
     "@babel/runtime": "7.9.2",
-    "axios": "0.19.2",
-    "colors-cli": "1.0.26",
-    "execa": "3.4.0",
-    "fs-extra": "9.0.1",
-    "yargs": "14.2.3"
+    "ora": "5.2.0",
+    "download": "8.0.0",
+    "minimist": "1.2.5",
+    "fs-extra": "9.0.1"
   }
 }
