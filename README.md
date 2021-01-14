@@ -16,7 +16,7 @@ $ npx create-kkt my-app
 
 ### Command Help
 
-Below is a help of commands you might find useful.
+Below is a help of commands you might find useful. The example download is from https://kktjs.github.io/zip/
 
 ```bash
 Usage: create-kkt <app-name> [options] [--help|h]
