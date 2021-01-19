@@ -33,7 +33,7 @@ async function run(): Promise<void> {
     argvs.appName = argvs._[0];
     argvs.path = argvs.p = argvs.path || argvs.p || 'https://kktjs.github.io/zip/';
     argvs.force = argvs.f = argvs.force || argvs.f || false;
-    argvs.example = argvs.e = argvs.example || argvs.e || 'basic';
+    argvs.example = argvs.e = (argvs.example || argvs.e || 'basic').toLocaleLowerCase();
     create(argvs, exampleHelp);
   } catch (error) {
     console.log(`\x1b[31m${error.message}\x1b[0m`);
