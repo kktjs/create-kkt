@@ -6,7 +6,7 @@ import { Argvs, exampleHelp } from './cli';
 
 export type CreateOptions = {} & Argvs;
 
-export default async (argv: CreateOptions) => {
+export async function create(argv: CreateOptions) {
   const spinner = ora('Downloading Example.');
   try {
     if (!argv.appName || !/^[A-Za-z0-9_\-\.]{1,}$/.test(argv.appName)) {
@@ -95,4 +95,4 @@ export default async (argv: CreateOptions) => {
     }
     process.exit(1);
   }
-};
+}
