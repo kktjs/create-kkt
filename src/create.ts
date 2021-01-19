@@ -2,11 +2,12 @@ import fs from 'fs-extra';
 import path from 'path';
 import download from 'download';
 import ora from 'ora';
-import os from 'os';
 import { Argvs, exampleHelp } from './cli';
 
-export default async (argv: Argvs) => {
-  const spinner = ora('Downloading example.');
+export type CreateOptions = {} & Argvs;
+
+export default async (argv: CreateOptions) => {
+  const spinner = ora('Downloading Example.');
   try {
     if (!argv.appName || !/^[A-Za-z0-9_\-\.]{1,}$/.test(argv.appName)) {
       console.log(`\n  \x1b[31mPlease specify the project directory name\x1b[0m.`);
@@ -56,7 +57,7 @@ export default async (argv: Argvs) => {
         spinner.text = `Unzip the \x1b[32m${argv.example}.zip\x1b[0m file.`;
       }
     });
-    spinner.succeed(`Creating a new React app in \x1b[32m${projectPath}\x1b[0m! \n`);
+    spinner.succeed(`Creating a new app in \x1b[32m${projectPath}\x1b[0m! \n`);
 
     const pkgPath = path.resolve(projectPath, 'package.json');
 

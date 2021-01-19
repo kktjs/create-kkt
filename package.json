@@ -4,12 +4,13 @@
   "description": "Creates a KKT application using the command line.",
   "homepage": "https://github.com/kktjs/create-kkt",
   "author": "Kenny Wong <wowohoo@qq.com> (https://github.com/jaywcjlove)",
+  "main": "lib/index.js",
+  "typings": "lib/create.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/kktjs/create-kkt"
   },
-  "typings": "lib/create.d.ts",
   "bin": {
     "create-kkt": "lib/cli.js"
   },
