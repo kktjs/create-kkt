@@ -1,12 +1,20 @@
 import fs from 'fs-extra';
+import { ParsedArgs } from 'minimist';
 import path from 'path';
 import download from 'download';
 import ora from 'ora';
-import { Argvs, exampleHelp } from './cli';
 
-export type CreateOptions = {} & Argvs;
+export type CreateOptions = {
+  appName?: string;
+  f?: boolean;
+  force?: boolean;
+  e?: string;
+  example?: string;
+  p?: string;
+  path?: string;
+} & ParsedArgs;
 
-export async function create(argv: CreateOptions) {
+export async function create(argv: CreateOptions, exampleHelp: () => void) {
   const spinner = ora('Downloading Example.');
   try {
     if (!argv.appName || !/^[A-Za-z0-9_\-\.]{1,}$/.test(argv.appName)) {
@@ -16,13 +24,13 @@ export async function create(argv: CreateOptions) {
           `  \x1b[31mThe name directory name\x1b[0m \x1b[33m${argv.appName}\x1b[0m \x1b[31mcontains special characters.\x1b[0m`,
         );
       }
-      exampleHelp();
+      exampleHelp && exampleHelp();
       console.log(`\n`);
       return;
     }
     if (!argv.path || typeof argv.path !== 'string') {
       console.log(`\n  Uh oh! \x1b[31mPlease specify download address\x1b[0m.`);
-      exampleHelp();
+      exampleHelp && exampleHelp();
       console.log(`\n`);
       return;
     }

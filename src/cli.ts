@@ -1,17 +1,7 @@
 #!/usr/bin/env node
 
-import minimist, { ParsedArgs } from 'minimist';
+import minimist from 'minimist';
 import { create } from './create';
-
-export type Argvs = {
-  appName?: string;
-  f?: boolean;
-  force?: boolean;
-  e?: string;
-  example?: string;
-  p?: string;
-  path?: string;
-} & ParsedArgs;
 
 async function run(): Promise<void> {
   try {
@@ -44,7 +34,7 @@ async function run(): Promise<void> {
     argvs.path = argvs.p = argvs.path || argvs.p || 'https://kktjs.github.io/zip/';
     argvs.force = argvs.f = argvs.force || argvs.f || false;
     argvs.example = argvs.e = argvs.example || argvs.e || 'basic';
-    create(argvs);
+    create(argvs, exampleHelp);
   } catch (error) {
     console.log(`\x1b[31m${error.message}\x1b[0m`);
     console.log(error);
