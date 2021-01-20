@@ -14,6 +14,12 @@ $ npm create kkt my-app
 $ npx create-kkt my-app
 ```
 
+or
+
+```bash
+$ npm i create-kkt -g
+```
+
 ### Command Help
 
 Below is a help of commands you might find useful. The example download is from https://kktjs.github.io/zip/
