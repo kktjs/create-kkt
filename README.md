@@ -7,6 +7,11 @@ Creates a [kkt](https://github.com/kktjs/kkt) application using the command line
 ### Usage
 
 ```shell
+# npm 6.x
+$ npm init kkt my-app --example react-component-tsx
+# npm 7+, extra double-dash is needed:
+$ npm init kkt my-app -- --example react-component-tsx
+
 $ yarn create kkt [appName]
 # or npm
 $ npm create kkt my-app
