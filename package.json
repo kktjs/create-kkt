@@ -53,7 +53,7 @@
     ]
   },
   "devDependencies": {
-    "@types/download": "6.2.4",
+    "@types/download": "8.0.0",
     "@types/fs-extra": "9.0.8",
     "@types/minimist": "1.2.1",
     "@types/node": "14.14.34",
