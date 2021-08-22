@@ -65,4 +65,4 @@ jobs:
           prerelease: false
 
       - run: npm install @jsdevtools/npm-publish -g
-      - run: ./node_modules/.bin/npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
+      - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
