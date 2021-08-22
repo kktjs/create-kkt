@@ -10,7 +10,7 @@
     "sourceMap": true,
     "outDir": "lib",
     "baseUrl": ".",
-    "typeRoots": ["node_modules/@types/*", "src/type/*"]
+    "types": ["jest"]
   },
   "include": ["src/**/*"]
 }
