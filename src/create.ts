@@ -84,6 +84,9 @@ export async function create(argv: CreateOptions, exampleHelp: () => void) {
       } else {
         console.log(`   ---\n`);
       }
+      if (pkg.version) {
+        await fs.writeJSON(pkgPath, { ...pkg, version: '1.0.0' }, { spaces: '  ' });
+      }
       console.log('  We suggest that you begin by typing:');
       console.log();
       console.log(`    \x1b[36mcd ${argv.appName}\x1b[0m`);
