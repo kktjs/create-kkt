@@ -1,6 +1,6 @@
 ## create-kkt
 
-[![Build](https://github.com/kktjs/create-kkt/workflows/Build/badge.svg)](https://github.com/kktjs/create-kkt/actions) [![](https://img.shields.io/github/issues/kktjs/create-kkt.svg)](https://github.com/kktjs/create-kkt/issues) [![](https://img.shields.io/github/forks/kktjs/create-kkt.svg)](https://github.com/kktjs/create-kkt/network) [![](https://img.shields.io/github/stars/kktjs/create-kkt.svg)](https://github.com/kktjs/create-kkt/stargazers) [![](https://img.shields.io/github/release/kktjs/create-kkt)](https://github.com/kktjs/create-kkt/releases) [![](https://img.shields.io/npm/v/create-kkt.svg)](https://www.npmjs.com/package/create-kkt)
+[![Coverage Status](https://coveralls.io/repos/github/kktjs/create-kkt/badge.svg?branch=master)](https://coveralls.io/github/kktjs/create-kkt?branch=master) [![Build](https://github.com/kktjs/create-kkt/workflows/Build/badge.svg)](https://github.com/kktjs/create-kkt/actions) [![](https://img.shields.io/npm/v/create-kkt.svg)](https://www.npmjs.com/package/create-kkt)
 
 Creates a [kkt](https://github.com/kktjs/kkt) application using the command line.
 
