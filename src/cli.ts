@@ -14,6 +14,7 @@ async function run(): Promise<void> {
       default: {
         path: 'https://kktjs.github.io/zip/',
         output: '.',
+        force: false,
         example: 'basic',
       },
     });
