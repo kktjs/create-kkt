@@ -14,7 +14,7 @@
     "create-kkt": "lib/cli.js"
   },
   "scripts": {
-    "prepare": "npm run build",
+    "prepare": "husky install && npm run build",
     "start": "node lib/index.js",
     "watch": "tsbb watch --no-esm",
     "build": "tsbb build --no-esm",
@@ -26,8 +26,13 @@
     "lib",
     "src"
   ],
-  "jest": {},
+  "jest": {
+    "testMatch": [
+      "<rootDir>/test/*.{ts,tsx}"
+    ]
+  },
   "keywords": [
+    "create",
     "kkt",
     "react",
     "redux",
@@ -38,11 +43,6 @@
     "framework",
     "frontend"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,less,md,json}": [
       "prettier --write"
@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@types/jest": "27.0.1",
-    "husky": "4.3.8",
+    "husky": "7.0.2",
     "lint-staged": "11.1.2",
     "prettier": "2.3.2",
     "tsbb": "3.0.3"
