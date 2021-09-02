@@ -35,6 +35,7 @@ Usage: create-kkt <app-name> [options] [--help|h]
 Options:
   --version, -v Show version number
   --help, -h Displays help information.
+  --output, -o Output directory.
   --example, -e Example from: https://kktjs.github.io/zip/ , default: "basic"
   --force, -f Overwrite target directory if it exists. default: false
   --path, -p Specify the download target git address. default: "https://kktjs.github.io/zip/"
