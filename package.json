@@ -16,14 +16,11 @@
   "scripts": {
     "prepare": "npm run build",
     "start": "node lib/index.js",
-    "watch": "npm run watch:ts",
-    "watch:ts": "tsbb watch & npm run build:types -- --watch",
-    "build": "npm run build:ts && npm run build:types",
-    "build:ts": "tsbb build",
-    "build:types": "tsbb types",
-    "test": "tsbb test",
+    "watch": "tsbb watch --no-esm",
+    "build": "tsbb build --no-esm",
     "prettier": "prettier --write \"**/*.{js,ts,less,md,json}\"",
-    "coverage": "tsbb test --coverage"
+    "coverage": "tsbb test --coverage",
+    "test": "tsbb test"
   },
   "files": [
     "lib",
@@ -56,7 +53,7 @@
     "husky": "4.3.8",
     "lint-staged": "11.1.2",
     "prettier": "2.3.2",
-    "tsbb": "2.3.1"
+    "tsbb": "3.0.3"
   },
   "dependencies": {
     "@babel/runtime": "7.15.3",
