@@ -10,6 +10,8 @@ export type CreateOptions = {
   force?: boolean;
   e?: string;
   example?: string;
+  o?: string;
+  output?: string;
   p?: string;
   path?: string;
 } & ParsedArgs;
@@ -34,7 +36,7 @@ export async function create(argv: CreateOptions, exampleHelp: () => void) {
       console.log(`\n`);
       return;
     }
-    const projectPath = path.join(process.cwd(), argv.appName);
+    const projectPath = path.join(process.cwd(), argv.output, argv.appName);
     if (argv.force) {
       await fs.remove(projectPath);
       await fs.ensureDir(projectPath);
@@ -74,7 +76,7 @@ export async function create(argv: CreateOptions, exampleHelp: () => void) {
     );
     if (fs.existsSync(pkgPath)) {
       console.log('  Inside that directory, you can run several commands:');
-      console.log();
+      console.log('');
       const pkg = require(pkgPath);
       if (pkg.scripts) {
         Object.keys(pkg.scripts).forEach((keyname) => {
@@ -88,11 +90,12 @@ export async function create(argv: CreateOptions, exampleHelp: () => void) {
         await fs.writeJSON(pkgPath, { ...pkg, version: '1.0.0' }, { spaces: '  ' });
       }
       console.log('  We suggest that you begin by typing:');
-      console.log();
+      console.log('');
       console.log(`    \x1b[36mcd ${argv.appName}\x1b[0m`);
+      console.log(`    \x1b[36myarn install\x1b[0m`);
       console.log('    \x1b[36myarn build\x1b[0m && \x1b[36myarn start\x1b[0m ');
     }
-    console.log();
+    console.log('');
     console.log('  Happy hacking!\n');
   } catch (error) {
     spinner.fail(`\x1b[31m${error.message}\x1b[0m`);
