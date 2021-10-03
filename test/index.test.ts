@@ -1,8 +1,10 @@
+/** @jest-environment node */
 import path from 'path';
 import FS from 'fs-extra';
 import { create, CreateOptions } from '../src/create';
 
 it('create project.', async () => {
+  jest.spyOn(process, 'exit').mockImplementation();
   const opts: CreateOptions = {
     _: ['my-app'],
     f: true,

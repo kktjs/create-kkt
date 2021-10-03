@@ -16,8 +16,8 @@
   "scripts": {
     "prepare": "husky install && npm run build",
     "start": "node lib/index.js",
-    "watch": "tsbb watch --no-esm",
-    "build": "tsbb build --no-esm",
+    "watch": "tsbb watch --disable-babel -f src/cli.ts",
+    "build": "tsbb build --disable-babel -f src/cli.ts",
     "prettier": "prettier --write \"**/*.{js,ts,less,md,json}\"",
     "coverage": "tsbb test --coverage",
     "test": "tsbb test"
@@ -49,7 +49,6 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "27.0.1",
     "husky": "7.0.2",
     "lint-staged": "11.1.2",
     "prettier": "2.4.1",
