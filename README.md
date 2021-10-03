@@ -1,6 +1,6 @@
-## create-kkt
+# create-kkt
 
-[![Coverage Status](https://coveralls.io/repos/github/kktjs/create-kkt/badge.svg?branch=master)](https://coveralls.io/github/kktjs/create-kkt?branch=master) [![Build](https://github.com/kktjs/create-kkt/workflows/Build/badge.svg)](https://github.com/kktjs/create-kkt/actions) [![](https://img.shields.io/npm/v/create-kkt.svg)](https://www.npmjs.com/package/create-kkt)
+[![Coverage Status](https://kktjs.github.io/create-kkt/badges.svg)](https://kktjs.github.io/create-kkt/lcov-report/) [![Build](https://github.com/kktjs/create-kkt/workflows/Build/badge.svg)](https://github.com/kktjs/create-kkt/actions) [![NPM Version](https://img.shields.io/npm/v/create-kkt.svg)](https://www.npmjs.com/package/create-kkt)
 
 Creates a [kkt](https://github.com/kktjs/kkt) application using the command line.
 
