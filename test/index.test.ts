@@ -26,3 +26,24 @@ it('create project.', async () => {
   expect(pkg.version).toEqual('1.0.0');
   expect(Object.keys(pkg)).toEqual(expect.arrayContaining(['name', 'version']));
 });
+
+it('create project Option appName=undefined.', async () => {
+  jest.spyOn(process, 'exit').mockImplementation();
+  const opts: CreateOptions = {
+    _: [],
+    f: true,
+    force: true,
+  };
+  await create(opts, () => {});
+});
+
+it('create project Option path=undefined.', async () => {
+  jest.spyOn(process, 'exit').mockImplementation();
+  const opts: CreateOptions = {
+    _: ['my-app'],
+    f: true,
+    force: true,
+    appName: 'my-app',
+  };
+  await create(opts, () => {});
+});
