@@ -8,8 +8,8 @@ console.log = jest.fn();
 it('create project. 1', async () => {
   const opts: CreateOptions = {};
   await create(opts, '');
-  // @ts-ignore
   expect(
+    // @ts-ignore
     console.log.mock.calls[0][0].indexOf('Please specify the project directory name') > -1,
   ).toBeTruthy();
 });
@@ -64,8 +64,8 @@ it('create project. options => force', async () => {
     path: 'https://kktjs.github.io/zip/',
   };
   await create(opts, '');
-  // @ts-ignore
   expect(
+    // @ts-ignore
     console.log.mock.calls[0][0].indexOf("Looks like there's already a directory called") > -1,
   ).toBeTruthy();
   expect(mockExit).toHaveBeenCalledWith(1);
