@@ -1,6 +1,6 @@
 {
   "name": "create-kkt",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "Creates a KKT application using the command line.",
   "homepage": "https://kktjs.github.io/create-kkt",
   "author": "Kenny Wong <wowohoo@qq.com> (https://github.com/jaywcjlove)",
