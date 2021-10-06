@@ -8,9 +8,9 @@
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "sourceMap": true,
+    "noEmit": false,
     "outDir": "lib",
-    "baseUrl": ".",
-    "types": ["jest"]
+    "baseUrl": "."
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "test"]
 }
