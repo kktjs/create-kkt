@@ -1,49 +1,38 @@
 /** @jest-environment node */
+import fs from 'fs-extra';
 import path from 'path';
-import FS from 'fs-extra';
-import { create, CreateOptions } from '../src/create';
+import { helpCli, helpExample, helpCopyright, run } from '../src';
+import pkg from '../package.json';
 
-it('create project.', async () => {
-  jest.spyOn(process, 'exit').mockImplementation();
-  const opts: CreateOptions = {
-    _: ['my-app'],
-    f: true,
-    force: true,
-    e: 'basic',
-    example: 'basic',
-    path: 'https://kktjs.github.io/zip/',
-    p: 'https://kktjs.github.io/zip/',
-    output: 'test',
-    o: 'test',
-    appName: 'my-app',
-  };
-  await create(opts, () => {});
-  const output = path.join(process.cwd(), 'test', 'my-app');
-  expect(FS.existsSync(output)).toBeTruthy();
-  const dirs = await FS.readdir(output);
-  expect(dirs).toEqual(['.gitignore', 'README.md', 'package.json', 'public', 'src']);
-  const pkg = await FS.readJSON(path.join(output, 'package.json'));
-  expect(pkg.version).toEqual('1.0.0');
-  expect(Object.keys(pkg)).toEqual(expect.arrayContaining(['name', 'version']));
+const argv = process.argv.slice(0, 2);
+console.log = jest.fn();
+
+it('appName test case', async () => {
+  // await fs.remove('test/my-app1')
+  process.argv = argv;
+  process.argv.push('my-app1');
+  process.argv.push('-f');
+  process.argv.push('--output');
+  process.argv.push('test');
+  await run();
+  // expect(await run()).toBeUndefined();
+  expect(await fs.existsSync(path.resolve(__dirname, 'my-app1'))).toBeTruthy();
+  await fs.remove('test/my-app1');
 });
 
-it('create project Option appName=undefined.', async () => {
-  jest.spyOn(process, 'exit').mockImplementation();
-  const opts: CreateOptions = {
-    _: [],
-    f: true,
-    force: true,
-  };
-  await create(opts, () => {});
+it('version test case', async () => {
+  process.argv = argv;
+  process.argv.push('--version');
+  expect(await run()).toBeUndefined();
+  // @ts-ignore
+  expect(console.log.mock.calls[0][0]).toBe(`\n create-kkt v${pkg.version}\n`);
 });
 
-it('create project Option path=undefined.', async () => {
-  jest.spyOn(process, 'exit').mockImplementation();
-  const opts: CreateOptions = {
-    _: ['my-app'],
-    f: true,
-    force: true,
-    appName: 'my-app',
-  };
-  await create(opts, () => {});
+it('help test case', async () => {
+  process.argv = argv;
+  expect(typeof helpCli).toEqual('string');
+  expect(typeof helpExample).toEqual('string');
+  expect(typeof helpCopyright).toEqual('string');
+  process.argv.push('--help');
+  expect(await run()).toBeUndefined();
 });

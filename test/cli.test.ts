@@ -1,16 +1,20 @@
 /** @jest-environment node */
-import { exampleHelp, run } from '../src/';
+import fs from 'fs-extra';
+import path from 'path';
 
-it('cliHelp test case', async () => {
-  expect(exampleHelp()).toBeUndefined();
-  // process.argv.push('-v');
-  // expect(await run()).toBeUndefined();
-  process.argv.push('--version');
-  expect(await run()).toBeUndefined();
-});
+console.log = jest.fn();
 
-it('version test case', async () => {
-  expect(exampleHelp()).toBeUndefined();
-  process.argv.push('-h');
-  expect(await run()).toBeUndefined();
+const argv = process.argv.slice(0, 2);
+
+it('create project. 1', async () => {
+  process.argv = argv;
+  process.argv.push('my-app2');
+  process.argv.push('-f');
+  process.argv.push('--output');
+  process.argv.push('test');
+  // console.log(process.argv)
+  await import('../src/cli');
+  // console.log(path.resolve(__dirname, 'my-app2'))
+  expect(await fs.existsSync(path.resolve(__dirname, 'my-app2'))).toBeTruthy();
+  await fs.remove('test/my-app2');
 });

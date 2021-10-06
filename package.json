@@ -19,8 +19,8 @@
     "watch": "tsbb watch --disable-babel -f src/cli.ts",
     "build": "tsbb build --disable-babel -f src/cli.ts",
     "prettier": "prettier --write \"**/*.{js,ts,less,md,json}\"",
-    "coverage": "tsbb test --coverage",
-    "test": "tsbb test"
+    "coverage": "tsbb test --coverage --detectOpenHandles",
+    "test": "tsbb test --detectOpenHandles"
   },
   "files": [
     "lib",
@@ -48,6 +48,9 @@
       "prettier --write"
     ]
   },
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
   "devDependencies": {
     "husky": "7.0.2",
     "lint-staged": "11.2.0",
@@ -60,7 +63,7 @@
     "@types/fs-extra": "9.0.13",
     "@types/minimist": "1.2.2",
     "@types/node": "16.7.1",
-    "ora": "6.0.1",
+    "ora": "5.4.1",
     "download": "8.0.0",
     "minimist": "1.2.5",
     "fs-extra": "10.0.0"
