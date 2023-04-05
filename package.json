@@ -16,8 +16,8 @@
   "scripts": {
     "prepare": "husky install && npm run build",
     "start": "node lib/index.js",
-    "watch": "tsbb watch --disable-babel -f src/cli.ts",
-    "build": "tsbb build --disable-babel -f src/cli.ts",
+    "watch": "tsbb watch",
+    "build": "tsbb build",
     "prettier": "prettier --write \"**/*.{js,ts,less,md,json}\"",
     "coverage": "tsbb test --coverage --detectOpenHandles",
     "test": "tsbb test --detectOpenHandles"
@@ -49,22 +49,22 @@
     ]
   },
   "engines": {
-    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+    "node": ">=16.0.0"
   },
   "devDependencies": {
-    "husky": "~7.0.4",
-    "lint-staged": "~12.3.5",
-    "prettier": "~2.5.1",
-    "tsbb": "~3.7.2"
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.7",
+    "tsbb": "^4.1.4"
   },
   "dependencies": {
-    "@types/download": "~8.0.1",
-    "@types/fs-extra": "~9.0.13",
+    "@types/download": "^8.0.2",
+    "@types/fs-extra": "^11.0.1",
     "@types/minimist": "~1.2.2",
-    "@types/node": "~16.11.0",
+    "@types/node": "^18.15.11",
     "ora": "~5.4.1",
     "download": "~8.0.0",
-    "minimist": "~1.2.5",
-    "fs-extra": "~10.0.0"
+    "minimist": "^1.2.8",
+    "fs-extra": "^11.1.1"
   }
 }

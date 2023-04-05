@@ -4,10 +4,10 @@
     "esModuleInterop": true,
     "declaration": true,
     "target": "es2017",
+    "skipLibCheck": true,
     "noImplicitAny": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
-    "sourceMap": true,
     "noEmit": false,
     "outDir": "lib",
     "baseUrl": "."
