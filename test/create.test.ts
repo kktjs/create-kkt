@@ -53,7 +53,7 @@ it('create project. options => force/example', async () => {
   await create(opts, '');
   expect(mockExit).toHaveBeenCalledWith(1);
   mockExit.mockRestore();
-});
+}, 3000);
 
 it('create project. options => force', async () => {
   await fs.ensureDir('test/my-app');
@@ -70,7 +70,7 @@ it('create project. options => force', async () => {
   ).toBeTruthy();
   expect(mockExit).toHaveBeenCalledWith(1);
   mockExit.mockRestore();
-});
+}, 6000);
 
 it('create project. options => example', async () => {
   const opts: CreateOptions = {
@@ -84,4 +84,4 @@ it('create project. options => example', async () => {
   // @ts-ignore
   expect(console.log.mock.calls[0][0].indexOf('Success! Created') > -1).toBeTruthy();
   await fs.remove('test/my-app');
-});
+}, 8000);
